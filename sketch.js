@@ -11,9 +11,11 @@ function preload() {
   protaRunAn=loadAnimation("protaAns/protaRun1.png","protaAns/protaRun2.png","protaAns/protaRun3.png","protaAns/protaRun4.png","protaAns/protaRun5.png","protaAns/protaRun6.png");
   protaIdleAn=loadAnimation("protaAns/protaIdle1.png","protaAns/protaIdle2.png","protaAns/protaIdle3.png");
   protaAtk1An=loadAnimation("protaAtkAns/protaAtk1.png","protaAtkAns/protaAtk2.png","protaAtkAns/protaAtk3.png","protaAtkAns/protaAtk4.png","protaAtkAns/protaAtk5.png","protaAtkAns/protaAtk6.png","protaAtkAns/protaAtk7.png","protaAtkAns/protaAtk8.png");
+  //protaAtk1An.looping=false;
   protaAtk2An=loadAnimation("protaAtkAns/protaSAt1.png","protaAtkAns/protaSAt2.png","protaAtkAns/protaSAt3.png");
+  //protaAtk2An.looping=false;
   protaAtk3An=loadAnimation("protaAtkAns/protaTAt1.png","protaAtkAns/protaTAt2.png","protaAtkAns/protaTAt3.png","protaAtkAns/protaTAt4.png","protaAtkAns/protaTAt5.png","protaAtkAns/protaTAt6.png");
-
+  //protaAtk3An.looping=false;
 }
 
 function setup() {
@@ -85,7 +87,6 @@ function draw() {
 }
 
 function mousePressed(){
-
 }
 
 function keyPressed(){
@@ -94,13 +95,22 @@ function keyPressed(){
   }
   if(keyCode===38){
     prota.changeAnimation("Atk1", protaAtk1An);
+    //setTimeout(()=>{
+      //prota.changeAnimation("Idle", protaIdleAn);
+  //},0800);
 
   }
-  if(keyCode===40){
+  if(keyCode===37){
     prota.changeAnimation("Atk2", protaAtk2An);
+    //setTimeout(()=>{
+      //prota.changeAnimation("Idle", protaIdleAn);
+  //},0800);
   }
   if(keyCode===39){
     prota.changeAnimation("Atk3", protaAtk3An);
+    //setTimeout(()=>{
+      //prota.changeAnimation("Idle", protaIdleAn);
+  //},0800);
   }
 }
 function keyReleased(){
