@@ -1,19 +1,19 @@
-var balloon, balloonImage1, balloonImage2;
 var database;
-var height;
-var prota, protaIdleAn,protaRunAn;
-var trees;
-var houses;
-var fences;
+var prota, protaIdleAn,protaRunAn, protaAtk1, protaAtk2, protaAtk3, protaAtk1An, protaAtk2An, protaAtk3An;
+var trees, fences;
 var background;
 var monsters;
-var house_Img, house, house2, house3aw;
+var house_Img, house, house2, house3;
 var invisibleWall1,invisibleWall2,invisibleWall3,invisibleWall4
 
 function preload() {
   house_Img=loadImage("house1.png");
   protaRunAn=loadAnimation("protaAns/protaRun1.png","protaAns/protaRun2.png","protaAns/protaRun3.png","protaAns/protaRun4.png","protaAns/protaRun5.png","protaAns/protaRun6.png");
   protaIdleAn=loadAnimation("protaAns/protaIdle1.png","protaAns/protaIdle2.png","protaAns/protaIdle3.png");
+  protaAtk1An=loadAnimation("protaAtkAns/protaAtk1.png","protaAtkAns/protaAtk2.png","protaAtkAns/protaAtk3.png","protaAtkAns/protaAtk4.png","protaAtkAns/protaAtk5.png","protaAtkAns/protaAtk6.png","protaAtkAns/protaAtk7.png","protaAtkAns/protaAtk8.png");
+  protaAtk2An=loadAnimation("protaAtkAns/protaSAt1.png","protaAtkAns/protaSAt2.png","protaAtkAns/protaSAt3.png");
+  protaAtk3An=loadAnimation("protaAtkAns/protaTAt1.png","protaAtkAns/protaTAt2.png","protaAtkAns/protaTAt3.png","protaAtkAns/protaTAt4.png","protaAtkAns/protaTAt5.png","protaAtkAns/protaTAt6.png");
+
 }
 
 function setup() {
@@ -39,6 +39,9 @@ function setup() {
   prota.shapeColor = "blue";
   prota.addAnimation("Idle", protaIdleAn);
   prota.addAnimation("run", protaRunAn);
+  prota.addAnimation("Atk1", protaAtk1An);
+  prota.addAnimation("Atk2", protaAtk2An);
+  prota.addAnimation("Atk3", protaAtk3An);
 
 }
 
@@ -74,17 +77,30 @@ function draw() {
   if(mousePressed){
     console.log("x: "+mouseX+" y: "+mouseY);
   }
+  
 
   camera.position.x=800
 
   drawSprites();
 }
 
-function mousePressed(){}
+function mousePressed(){
+
+}
 
 function keyPressed(){
   if(keyCode===87||keyCode===83||keyCode===68||keyCode===65){
     prota.changeAnimation("run", protaRunAn);
+  }
+  if(keyCode===38){
+    prota.changeAnimation("Atk1", protaAtk1An);
+
+  }
+  if(keyCode===40){
+    prota.changeAnimation("Atk2", protaAtk2An);
+  }
+  if(keyCode===39){
+    prota.changeAnimation("Atk3", protaAtk3An);
   }
 }
 function keyReleased(){
