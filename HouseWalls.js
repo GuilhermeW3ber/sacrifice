@@ -1,4 +1,4 @@
-class Tree{
+class HouseWalls{
     constructor(image, x, y){
         this.image=image;
         this.sprite=createSprite(x, y);
